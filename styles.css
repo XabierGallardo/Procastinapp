@@ -1,0 +1,27 @@
+body {
+	margin: 0 auto;
+	font-family: 'Ubuntu Mono', monospace;
+}
+
+#container, #tasks textarea{
+	background: Gainsboro;
+}
+
+#tasks textarea {
+	width: 90%;
+	height: 80%;
+	font-size: x-large;
+	border: 1.5px solid;
+}
+
+#crono, #tasks, #tools {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	flex: 1;
+	height: 100vh;
+}
+
+#container {
+	display: flex;
+}
