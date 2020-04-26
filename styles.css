@@ -1,27 +1,88 @@
+/*	General		*/
+
 body {
 	margin: 0 auto;
 	font-family: 'Ubuntu Mono', monospace;
 }
 
-#container, #tasks textarea{
-	background: Gainsboro;
-}
-
-#tasks textarea {
-	width: 90%;
-	height: 80%;
-	font-size: x-large;
-	border: 1.5px solid;
-}
-
-#crono, #tasks, #tools {
+#container {
 	display: flex;
-	flex-direction: column;
-	align-items: center;
-	flex: 1;
 	height: 100vh;
 }
 
-#container {
-	display: flex;
+#crono, #tasks, #options {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        flex: 1;
+        height: 95vh;
 }
+
+i {
+	cursor: pointer;
+}
+
+.lightTheme {
+	background: Gainsboro;
+	color: black;
+}
+
+.darkTheme {
+	background: #262626;
+	color: #e6e6e6;
+}
+
+
+
+
+/*	Crono		*/
+
+#crono {
+	justify-content: space-between;
+}
+
+#crono-timer h1 {
+	font-size: 100px;
+	font-family: 'Digital-7', arial;
+}
+
+#crono-items {
+	width: 100%;
+	display: flex;
+	justify-content: space-around;
+}
+
+#crono-items i{
+	padding-left: 2%;
+	padding-right: 2%;
+}
+
+
+
+
+/*	Tasks		*/
+
+#tasks {
+	justify-content: start;
+}
+
+#tasks textarea {
+        width: 90%;
+        height: 75%;
+        font-size: x-large;
+        border: 1.5px solid;
+	border-radius: 2px;
+}
+
+
+
+
+/*	Options		*/
+#options {
+	justify-content: space-around;
+}
+
+/*#options-instructions {
+	border: 1.5px solid;
+	padding: 1%;
+}*/
