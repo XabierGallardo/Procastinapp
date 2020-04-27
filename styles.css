@@ -10,11 +10,10 @@ body {
 	height: 100vh;
 }
 
-#crono, #tasks, #options {
+#crono, #tasks {
         display: flex;
         flex-direction: column;
         align-items: center;
-        flex: 1;
         height: 95vh;
 }
 
@@ -38,6 +37,7 @@ i {
 /*	Crono		*/
 
 #crono {
+	flex: 1;
 	justify-content: space-between;
 }
 
@@ -63,11 +63,12 @@ i {
 /*	Tasks		*/
 
 #tasks {
+	flex: 1;
 	justify-content: start;
 }
 
 #tasks textarea {
-        width: 90%;
+        width: 100%;
         height: 75%;
         font-size: x-large;
         border: 1.5px solid;
@@ -78,11 +79,27 @@ i {
 
 
 /*	Options		*/
+
 #options {
-	justify-content: space-around;
+	flex: 1;
+	display: flex;
 }
 
-/*#options-instructions {
-	border: 1.5px solid;
-	padding: 1%;
-}*/
+#options-results, #options-icons {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-evenly;
+	height: 95vh;
+}
+
+#options-results {
+	height: 88vh;
+	font-size: xx-large;
+}
+
+#options-results_clock, #options-results_countdown {
+	font-family: 'Digital-7', arial;
+
+}
