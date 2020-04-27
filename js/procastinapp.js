@@ -1,28 +1,27 @@
-//$(document).ready() shorcut
-$(function() {
+$(function() { //$(document).ready() shorcut
 
 	//Start clock
 	setInterval(function(){
+
 		let d = new Date();
-                let hours = d.getHours();
-                let minutes = d.getMinutes();
-                let seconds = d.getSeconds();
+        let hours = d.getHours();
+        let minutes = d.getMinutes();
+        let seconds = d.getSeconds();
 
+        //Add double digits
 		if (hours < 10) {
-
 			hours = "0" + hours;
 
-		}else if (minutes < 10) {
-
+		} else if (minutes < 10) {
 			minutes = "0" + minutes;
 
-		}else if (seconds < 10) {
-
+		} else if (seconds < 10) {
 			seconds = "0" + seconds;
 		}
 
-                $("#options-results_clock").html(hours + ":" + minutes + ":"  +seconds);
-                }, 1000);
+        $("#options-results_clock").html(hours + ":" + minutes + ":"  + seconds);
+        }, 1000);
+
 
 	
 	//Show clock
@@ -31,9 +30,9 @@ $(function() {
 	});
 
 	//Show countdown
-        $("#options-icons_countdown").click(function() {
-                $("#options-results_countdown").toggleClass("show");
-        });
+    $("#options-icons_countdown").click(function() {
+        $("#options-results_countdown").toggleClass("show");
+    });
 
 
 	//Contrast button
@@ -43,9 +42,9 @@ $(function() {
 	});
 	
 	//Play music
-        $("#options-icons_music").click(function() {
+    $("#options-icons_music").click(function() {
 		$("#options-results_music").toggleClass("show");
-        });
+    });
 
 	
 });

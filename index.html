@@ -4,16 +4,21 @@
 		<meta charset="UTF-8">
 		<title>Procastinapp</title>
 		<link rel="stylesheet" type="text/css" href="css/styles.css">
+
 		<!--Fonts & Icons-->
 		<link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap" rel="stylesheet">
 		<link href="http://allfont.net/allfont.css?fonts=digital-7" rel="stylesheet" type="text/css" />
 		<script src="https://kit.fontawesome.com/6ef9bb69c9.js" crossorigin="anonymous"></script>
+		
 		<!--jQuery & JavaScript-->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 		<script src="js/procastinapp.js" type="text/javascript"></script>
+
 	</head>
 	<body>
+
 		<div id="container" class="lightTheme">
+
 
 			<div id="crono">
 				<h1>Crono</h1>
@@ -27,37 +32,69 @@
 				</div>
 			</div>
 
+
 			<div id="tasks">
 				<h1>Daily Tasks</h1>
 				<textarea id="tasks-text" class="lightTheme"></textarea>
 			</div>
 			
+
 			<div id="options">
-				<div id="options-results">
+			
+				<div id="options-clock">
 					<div id="options-results_clock" class="hide"></div>
-
-					<div id="options-results_countdown" class="hide">01:23:00</div>
-
-					<div id="options-results_music" class="hide">
-						<i class="fas fa-play" id="crono-play"></i>
-	                                        <i class="fas fa-pause" id="crono-pause"></i>
-        	                                <i class="fas fa-random" id="crono-restart"></i>
+					<div id="options-icons_clock">
+						<i class="fas fa-clock fa-2x" id="options-icon_clock"></i>
 					</div>
-
-					<div id="options-results_contrast" class="hide"></div>
 				</div>
-				
-				<div id="options-icons">
 
-		                      <i class="fas fa-clock fa-2x" id="options-icons_clock"></i>
-                                        <i class="fas fa-stopwatch fa-2x" id="options-icons_countdown"></i>
-                                        <i class="fas fa-headphones fa-2x" id="options-icons_music"></i>
-					<i class="fas fa-adjust fa-2x" id="options-icons_contrast"></i>
+				<div id="options-countdown">
+					<div id="options-results_countdown" class="hide">
 
+						<div id="up-countdown">
+							<i class="fas fa-angle-up"></i>
+							<i class="fas fa-angle-up"></i>
+							<i class="fas fa-angle-up"></i>	
+						</div>
+						
+						<div id="timer-coundtown">00 : 00 : 00</div>
 
+						<div id="down-countdown">
+							<i class="fas fa-angle-down"></i>
+							<i class="fas fa-angle-down"></i>
+							<i class="fas fa-angle-down"></i>
+						</div>
+					
 				</div>
+
+					<div id="options-icons_countdown">
+						<i class="fas fa-stopwatch fa-2x" id="options-icons_countdown"></i>
+					</div>
+				</div>
+
+				<div id="options-music">
+					<div id="options-results_music" class="hide">
+						<i class="fas fa-play fa-2x" id="crono-play"></i>
+						<i class="fas fa-pause fa-2x" id="crono-pause"></i>
+						<i class="fas fa-random fa-2x" id="crono-restart"></i>
+					</div>
+					<div id="options-icons_music">
+						<i class="fas fa-headphones fa-2x" id="options-icons_music"></i>
+					</div>	
+				</div>
+
+				<div id="options-contrast">
+					<div id="options-results_contrast" class="hide">Contrast</div>
+					<div id="options-icons_contrast">
+						<i class="fas fa-adjust fa-2x" id="options-icons_contrast"></i>
+					</div>
+					
+				</div>
+		         
+
 			</div>
 		</div>
+
 	</body>
 </html>
 
