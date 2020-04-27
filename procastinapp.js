@@ -1,32 +1,26 @@
 //$(document).ready() shorcut
 $(function() {
 	
-	//Default theme
-	$("#container").addClass("lightTheme");
-	$("#tasks-text").addClass("lightTheme");
-
-
-
 	//Show clock
-	$("#options-clock").click(function() {
-		console.log("clock!");
+	$("#options-icons_clock").click(function() {
+		$("#options-results_clock").toggleClass("show");
 	});
 
 	//Show countdown
-        $("#options-countdown").click(function() {
-                console.log("countdown!");
+        $("#options-icons_countdown").click(function() {
+                $("#options-results_countdown").toggleClass("show");
         });
 
 
 	//Contrast button
-	$("#options-contrast").click(function() {
+	$("#options-icons_contrast").click(function() {
 		$("#container").toggleClass("darkTheme");
 		$("#tasks-text").toggleClass("darkTheme");
 	});
 	
 	//Play music
-        $("#options-music").click(function() {
-                console.log("music!");
+        $("#options-icons_music").click(function() {
+		$("#options-results_music").toggleClass("show");
         });
 
 	

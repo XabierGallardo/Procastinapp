@@ -31,6 +31,10 @@ i {
 	color: #e6e6e6;
 }
 
+.hide { visibility: hidden;}
+
+.show { visibility: visible;}
+
 
 
 
@@ -91,12 +95,16 @@ i {
 	flex-direction: column;
 	align-items: center;
 	justify-content: space-evenly;
-	height: 95vh;
+	height: 93vh;
 }
 
 #options-results {
 	height: 88vh;
 	font-size: xx-large;
+}
+
+#options-results_music i {
+	font-size: x-large;
 }
 
 #options-results_clock, #options-results_countdown {
