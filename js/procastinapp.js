@@ -12,10 +12,14 @@ $(function() { //$(document).ready() shorcut
 		if (hours < 10) {
 			hours = "0" + hours;
 
-		} else if (minutes < 10) {
+		}
+
+		if (minutes < 10) {
 			minutes = "0" + minutes;
 
-		} else if (seconds < 10) {
+		}
+
+		 if (seconds < 10) {
 			seconds = "0" + seconds;
 		}
 
@@ -30,8 +34,11 @@ $(function() { //$(document).ready() shorcut
 	});
 
 	//Show countdown
-    $("#options-icons_countdown").click(function() {
-        $("#options-results_countdown").toggleClass("show");
+    $("#options-countdown_icons").click(function() {
+        $("#timer-countdown").toggleClass("show");
+        $("#up-countdown").toggleClass("show");
+        $("#down-countdown").toggleClass("show");
+        $("#options-countdown_controller").toggleClass("show");
     });
 
 

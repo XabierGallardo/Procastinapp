@@ -96,35 +96,51 @@ i {
 	justify-content: space-between;
 }
 
-#options-icons_clock, #options-icons_countdown, #options-icons_music, #options-icons_contrast {
+#options-icons_clock, #options-countdown_icons, #options-icons_music, #options-icons_contrast {
 	padding-right: 15%;
 }
 
-#options-results_clock, #options-results_countdown {
-	width: 50%;
-	padding-left: 25%;
-}
-
-#options-results_clock, #options-results_countdown {
-	font-family: 'Digital-7', arial;
-}
-
-#options-results_clock {
+#options-countdown_timer, #options-results_clock {
 	font-size: 5vh;
 }
 
-#options-results_music {
+#options-countdown_controller {
 	display: flex;
-	justify-content: space-around;
-	width: 60%;
-	font-size: 1.5vh;
-	padding-left: 5%;
+	flex-direction: column;
 }
 
-#options-results_countdown {
-	font-size: 4vh;
+#options-results_clock {
+	flex: 1;
+	display: flex;
+	justify-content: space-around;
+}
+
+#options-results_clock, #timer-countdown {
+	font-family: 'Digital-7', arial;
+}
+
+#options-countdown_functionality {
+	display: flex;
+	flex: 1;
+	justify-content: space-evenly;
+	align-items: center;
+	padding-left: 10%;
+}
+
+#up-countdown, #down-countdown {
+	display: flex;
+	justify-content: space-around;
 }
 
 #up-countdown i, #down-countdown i {
 	font-size: 3vh;
+}
+
+
+#options-results_music {
+	display: flex;
+	justify-content: space-evenly;
+	flex: 1;
+	font-size: 1.5vh;
+	padding-left: 9%;
 }

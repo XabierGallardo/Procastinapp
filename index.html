@@ -20,6 +20,9 @@
 		<div id="container" class="lightTheme">
 
 
+
+
+			<!-- Crono -->
 			<div id="crono">
 				<h1>Crono</h1>
 				<div id="crono-timer">
@@ -33,14 +36,21 @@
 			</div>
 
 
+
+
+			<!-- Tasks -->
 			<div id="tasks">
 				<h1>Daily Tasks</h1>
 				<textarea id="tasks-text" class="lightTheme"></textarea>
 			</div>
 			
 
+
+
+			<!-- Options -->
 			<div id="options">
-			
+				
+				<!-- Options Clock -->
 				<div id="options-clock">
 					<div id="options-results_clock" class="hide"></div>
 					<div id="options-icons_clock">
@@ -48,18 +58,22 @@
 					</div>
 				</div>
 
+				<!-- Options Countdown -->
 				<div id="options-countdown">
-					<div id="options-results_countdown" class="hide">
 
-						<div id="up-countdown">
+					<div id="options-countdown_functionality">
+
+						<div id="options-countdown_timer" class="hide">
+
+						<div id="up-countdown" class="hide">
 							<i class="fas fa-angle-up"></i>
 							<i class="fas fa-angle-up"></i>
 							<i class="fas fa-angle-up"></i>	
 						</div>
 						
-						<div id="timer-coundtown">00 : 00 : 00</div>
+						<div id="timer-countdown">00:00:00</div>
 
-						<div id="down-countdown">
+						<div id="down-countdown" class="hide">
 							<i class="fas fa-angle-down"></i>
 							<i class="fas fa-angle-down"></i>
 							<i class="fas fa-angle-down"></i>
@@ -67,11 +81,23 @@
 					
 				</div>
 
-					<div id="options-icons_countdown">
-						<i class="fas fa-stopwatch fa-2x" id="options-icons_countdown"></i>
+				<div id="options-countdown_controller" class="hide">
+					<i class="far fa-play-circle" id="countdown-play"></i>
+					<i class="far fa-pause-circle" id="countdown-pause"></i>
+					<i class="far fa-stop-circle" id="countdown-stop"></i>
+				</div>
+						
+					</div>
+
+					<div id="options-countdown_icons">
+						<i class="fas fa-stopwatch fa-2x"></i>
 					</div>
 				</div>
 
+
+
+ 
+				<!-- Options Music -->
 				<div id="options-music">
 					<div id="options-results_music" class="hide">
 						<i class="fas fa-play fa-2x" id="crono-play"></i>
@@ -83,6 +109,9 @@
 					</div>	
 				</div>
 
+
+
+				<!-- Options Contrast -->
 				<div id="options-contrast">
 					<div id="options-results_contrast" class="hide">Contrast</div>
 					<div id="options-icons_contrast">
