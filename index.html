@@ -3,6 +3,8 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>Procastinapp</title>
+
+		<!--CSS-->
 		<link rel="stylesheet" type="text/css" href="css/styles.css">
 
 		<!--Fonts & Icons-->
@@ -19,19 +21,16 @@
 
 		<div id="container" class="lightTheme">
 
-
-
-
 			<!-- Crono -->
 			<div id="crono">
 				<h1>Crono</h1>
-				<div id="crono-timer">
-					<h1>0:00:00</h1>
+				<div id="crono-results">
+					<h1 id="timer-crono">0:00:00</h1>
 				</div>
-				<div id="crono-items">
-					<i class="fas fa-play fa-2x" id="crono-play"></i>
-					<i class="fas fa-pause fa-2x" id="crono-pause"></i>
-					<i class="fas fa-history fa-2x" id="crono-restart"></i>
+				<div id="crono-icons">
+					<i class="fas fa-play fa-2x" id="play-crono"></i>
+					<i class="fas fa-pause fa-2x" id="pause-crono"></i>
+					<i class="fas fa-history fa-2x" id="restart-crono"></i>
 				</div>
 			</div>
 
@@ -41,7 +40,7 @@
 			<!-- Tasks -->
 			<div id="tasks">
 				<h1>Daily Tasks</h1>
-				<textarea id="tasks-text" class="lightTheme"></textarea>
+				<textarea id="text-tasks" class="lightTheme"></textarea>
 			</div>
 			
 
@@ -52,9 +51,9 @@
 				
 				<!-- Options Clock -->
 				<div id="options-clock">
-					<div id="options-results_clock" class="hide"></div>
-					<div id="options-icons_clock">
-						<i class="fas fa-clock fa-2x" id="options-icon_clock"></i>
+					<div id="options-clock_results" class="hide"></div>
+					<div id="options-clock_icons">
+						<i class="fas fa-clock fa-2x" id="icon-clock"></i>
 					</div>
 				</div>
 
@@ -66,31 +65,31 @@
 						<div id="options-countdown_timer" class="hide">
 
 						<div id="up-countdown" class="hide">
-							<i class="fas fa-angle-up"></i>
-							<i class="fas fa-angle-up"></i>
-							<i class="fas fa-angle-up"></i>	
+							<i class="fas fa-angle-up" id="up-hours"></i>
+							<i class="fas fa-angle-up" id="up-minutes"></i>
+							<i class="fas fa-angle-up" id="up-seconds"></i>	
 						</div>
 						
-						<div id="timer-countdown">00:00:00</div>
+						<div id="timer-countdown" class="hide">00:00:00</div>
 
 						<div id="down-countdown" class="hide">
-							<i class="fas fa-angle-down"></i>
-							<i class="fas fa-angle-down"></i>
-							<i class="fas fa-angle-down"></i>
+							<i class="fas fa-angle-down" id="down-hours"></i>
+							<i class="fas fa-angle-down" id="down-minutes"></i>
+							<i class="fas fa-angle-down" id="down-seconds"></i>
 						</div>
 					
 				</div>
 
 				<div id="options-countdown_controller" class="hide">
-					<i class="far fa-play-circle" id="countdown-play"></i>
-					<i class="far fa-pause-circle" id="countdown-pause"></i>
-					<i class="far fa-stop-circle" id="countdown-stop"></i>
+					<i class="far fa-play-circle" id="play-controller"></i>
+					<i class="far fa-pause-circle" id="pause-controller"></i>
+					<i class="far fa-stop-circle" id="stop-controller"></i>
 				</div>
 						
 					</div>
 
 					<div id="options-countdown_icons">
-						<i class="fas fa-stopwatch fa-2x"></i>
+						<i class="fas fa-stopwatch fa-2x" id="icon-countdown"></i>
 					</div>
 				</div>
 
@@ -99,13 +98,13 @@
  
 				<!-- Options Music -->
 				<div id="options-music">
-					<div id="options-results_music" class="hide">
-						<i class="fas fa-play fa-2x" id="crono-play"></i>
-						<i class="fas fa-pause fa-2x" id="crono-pause"></i>
-						<i class="fas fa-random fa-2x" id="crono-restart"></i>
+					<div id="options-music_results" class="hide">
+						<i class="fas fa-play fa-2x" id="play-music"></i>
+						<i class="fas fa-pause fa-2x" id="pause-music"></i>
+						<i class="fas fa-random fa-2x" id="stop-music"></i>
 					</div>
-					<div id="options-icons_music">
-						<i class="fas fa-headphones fa-2x" id="options-icons_music"></i>
+					<div id="options-music_icons">
+						<i class="fas fa-headphones fa-2x" id="icon-music"></i>
 					</div>	
 				</div>
 
@@ -113,9 +112,9 @@
 
 				<!-- Options Contrast -->
 				<div id="options-contrast">
-					<div id="options-results_contrast" class="hide">Contrast</div>
-					<div id="options-icons_contrast">
-						<i class="fas fa-adjust fa-2x" id="options-icons_contrast"></i>
+					<div id="options-contrast_results" class="hide">Contrast</div>
+					<div id="options-contrast_icons">
+						<i class="fas fa-adjust fa-2x" id="icon-contrast"></i>
 					</div>
 					
 				</div>

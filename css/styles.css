@@ -46,20 +46,15 @@ i {
 	justify-content: space-between;
 }
 
-#crono-timer h1 {
+#timer-crono {
 	font-size: 10vh;
 	font-family: 'Digital-7', arial;
 }
 
-#crono-items {
+#crono-icons {
 	width: 100%;
 	display: flex;
 	justify-content: space-around;
-}
-
-#crono-items i{
-	padding-left: 2%;
-	padding-right: 2%;
 }
 
 
@@ -71,12 +66,12 @@ i {
 	justify-content: start;
 }
 
-#tasks textarea {
+#text-tasks {
 	width: 98%;
 	padding: 1%;
-    height: 75%;
-    font-size: x-large;
-    border: 1.5px solid;
+	height: 75%;
+	font-size: x-large;
+	border: 1.5px solid;
 	border-radius: 2px;
 }
 
@@ -96,11 +91,11 @@ i {
 	justify-content: space-between;
 }
 
-#options-icons_clock, #options-countdown_icons, #options-icons_music, #options-icons_contrast {
+#options-clock_icons, #options-countdown_icons, #options-music_icons, #options-contrast_icons {
 	padding-right: 15%;
 }
 
-#options-countdown_timer, #options-results_clock {
+#options-countdown_timer, #options-clock_results {
 	font-size: 5vh;
 }
 
@@ -109,13 +104,16 @@ i {
 	flex-direction: column;
 }
 
-#options-results_clock {
-	flex: 1;
+#options-clock_results, #up-countdown, #down-countdown {
 	display: flex;
 	justify-content: space-around;
 }
 
-#options-results_clock, #timer-countdown {
+ #up-countdown i, #down-countdown i {
+	 font-size: 3vh;
+ }
+
+#options-clock_results, #timer-countdown {
 	font-family: 'Digital-7', arial;
 }
 
@@ -124,23 +122,13 @@ i {
 	flex: 1;
 	justify-content: space-evenly;
 	align-items: center;
-	padding-left: 10%;
+	padding-left: 4%;
 }
 
-#up-countdown, #down-countdown {
-	display: flex;
-	justify-content: space-around;
-}
-
-#up-countdown i, #down-countdown i {
-	font-size: 3vh;
-}
-
-
-#options-results_music {
+#options-music_results {
 	display: flex;
 	justify-content: space-evenly;
 	flex: 1;
 	font-size: 1.5vh;
-	padding-left: 9%;
+	padding-left: 4%;
 }

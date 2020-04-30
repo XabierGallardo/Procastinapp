@@ -1,9 +1,9 @@
-$(function() { //$(document).ready() shorcut
+$(function() { //$(document).ready() shortcut
 
 	//Start clock
 	setInterval(function(){
-
-		let d = new Date();
+	
+	let d = new Date();
         let hours = d.getHours();
         let minutes = d.getMinutes();
         let seconds = d.getSeconds();
@@ -19,18 +19,18 @@ $(function() { //$(document).ready() shorcut
 
 		}
 
-		 if (seconds < 10) {
+		if (seconds < 10) {
 			seconds = "0" + seconds;
 		}
 
-        $("#options-results_clock").html(hours + ":" + minutes + ":"  + seconds);
+        $("#options-clock_results").html(hours + ":" + minutes + ":"  + seconds);
         }, 1000);
 
 
 	
 	//Show clock
-	$("#options-icons_clock").click(function() {
-		$("#options-results_clock").toggleClass("show");
+	$("#options-clock_icons").click(function() {
+		$("#options-clock_results").toggleClass("show");
 	});
 
 	//Show countdown
@@ -43,14 +43,14 @@ $(function() { //$(document).ready() shorcut
 
 
 	//Contrast button
-	$("#options-icons_contrast").click(function() {
+	$("#options-contrast_icons").click(function() {
 		$("#container").toggleClass("darkTheme");
-		$("#tasks-text").toggleClass("darkTheme");
+		$("#text-tasks").toggleClass("darkTheme");
 	});
 	
 	//Play music
-    $("#options-icons_music").click(function() {
-		$("#options-results_music").toggleClass("show");
+    $("#options-music_icons").click(function() {
+		$("#options-music_results").toggleClass("show");
     });
 
 	
