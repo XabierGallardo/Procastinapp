@@ -46,9 +46,18 @@ i {
 	justify-content: space-between;
 }
 
-#timer-crono {
+#crono-results {
+	display: flex;
+	width: 65%;
+	justify-content: flex-start;
+	align-items: center;
+	font-size: 3vh;
+}
+
+#crono-hours, #crono-minutes, #crono-seconds {
 	font-size: 10vh;
-	font-family: 'Digital-7', arial;
+	padding-left: 5%;
+	padding-right: 5%;
 }
 
 #crono-icons {
@@ -107,13 +116,14 @@ i {
 #options-clock_results, #up-countdown, #down-countdown {
 	display: flex;
 	justify-content: space-around;
+	flex: 1;
 }
 
  #up-countdown i, #down-countdown i {
 	 font-size: 3vh;
  }
 
-#options-clock_results, #timer-countdown {
+#options-clock_results, #crono-results h1 {
 	font-family: 'Digital-7', arial;
 }
 
