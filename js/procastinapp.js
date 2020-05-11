@@ -14,7 +14,7 @@ $(function() { //$(document).ready() shortcut
 
 
 	//Set clock
-	setInterval(function(){
+	setInterval(function() {
 	
 		let clock = new Date();
     	let clockHours = clock.getHours();
@@ -42,66 +42,89 @@ $(function() { //$(document).ready() shortcut
 
 
 
-	//Start crono//////////////////////////////////////////////
+	//CRONO//////////////////////////////////////////////////////////////////////////////////////////
+
+
+	//Start crono
+	let crono = setInterval(startCrono,1000);
 
 	$("#play-crono").click(function() {
 		crono_start = !crono_start; //Revert value of boolean
 
 		if (crono_start === true) { //While working
 			console.log("crono working");
+			startCrono();
 
-			
-			setInterval(function () {
-
-			cronoSeconds++;			
-
-			if (cronoSeconds > 59) { //Add a minute each 60 seconds
-				cronoSeconds = 0;
-				cronoMinutes++;
-			}
-
-			if (cronoMinutes > 59) { //Add an hour each 60 minutes
-				cronoMinutes = 0;
-				cronoHours++;
-			}
-
-			if(cronoHours > 24) { //Add a max of 24 hours to reset values
-				cronoSeconds = 0;
-				cronoMinutes = 0;
-				cronoHours = 0;
-			}
-
-
-			//Print values and add double digits
-			if (cronoSeconds < 10) {
-				$("#crono-seconds").html("0" + cronoSeconds);
 			} else {
-				$("#crono-seconds").html(cronoSeconds);
-			}
-
-			if(cronoMinutes < 10) {
-				$("#crono-minutes").html("0" + cronoMinutes);	
-			} else {
-				$("#crono-minutes").html(cronoMinutes);
-			}	
-
-			if (cronoHours < 10) {
-				$("#crono-hours").html("0" + cronoHours);
-			} else {
-				$("#crono-hours").html(cronoHours);
-			}
-
-			},1000);
-
-		} else {
 			console.log("crono not working");
 		}
 	});
 
-	//Pause crono//////////////////////////////////////////////
-	$("#pause-crono").click(function() {
+
+	//Pause crono
+	$("#pause-crono").click(stopCrono);
+
+
+	//Restart crono
+	$("#restart-crono").click(restartCrono);
+
+
+	//Crono functions////////////////
+	function startCrono() {
+		console.log("crono working");
+
+		cronoSeconds++;			
+
+		if (cronoSeconds > 59) { //Add a minute each 60 seconds
+			cronoSeconds = 0;
+			cronoMinutes++;
+		}
+
+		if (cronoMinutes > 59) { //Add an hour each 60 minutes
+			cronoMinutes = 0;
+			cronoHours++;
+		}
+
+		if(cronoHours > 24) { //Add a max of 24 hours to reset values
+			cronoSeconds = 0;
+			cronoMinutes = 0;
+			cronoHours = 0;
+		}
+
+
+		//Print values and add double digits
+		if (cronoSeconds < 10) {
+			$("#crono-seconds").html("0" + cronoSeconds);
+		} else {
+			$("#crono-seconds").html(cronoSeconds);
+		}
+
+		if(cronoMinutes < 10) {
+			$("#crono-minutes").html("0" + cronoMinutes);	
+		} else {
+			$("#crono-minutes").html(cronoMinutes);
+		}	
+
+		if (cronoHours < 10) {
+			$("#crono-hours").html("0" + cronoHours);
+		} else {
+			$("#crono-hours").html(cronoHours);
+		}
+	}
+
+	function stopCrono () {
 		console.log("pause button");
-	});
+		clearInterval(crono);
+	}
+
+
+	function restartCrono () {
+		console.log("crono restarted");
+		cronoHours = 0;
+		cronoMinutes = 0;
+		cronoSeconds = 0;
+	}
+
 
 
 

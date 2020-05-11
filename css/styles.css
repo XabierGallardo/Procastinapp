@@ -100,12 +100,16 @@ i {
 	justify-content: space-between;
 }
 
-#options-clock_icons, #options-countdown_icons, #options-music_icons, #options-contrast_icons {
+#options-clock_icons, #options-music_icons, #options-contrast_icons {
 	padding-right: 15%;
 }
 
+#options-countdown_icons {
+	padding-right: 16%;
+}
+
 #options-countdown_timer, #options-clock_results {
-	font-size: 5vh;
+	font-size: 4vh;
 }
 
 #options-countdown_controller {
@@ -123,7 +127,7 @@ i {
 	 font-size: 3vh;
  }
 
-#options-clock_results, #crono-results h1 {
+#options-clock_results, #crono-results h1, #timer-countdown {
 	font-family: 'Digital-7', arial;
 }
 
@@ -132,7 +136,6 @@ i {
 	flex: 1;
 	justify-content: space-evenly;
 	align-items: center;
-	padding-left: 4%;
 }
 
 #options-music_results {
