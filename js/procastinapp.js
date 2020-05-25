@@ -1,6 +1,6 @@
 $(function() { //$(document).ready() shortcut
 
-	//Initial config////////////////////////////////////////
+	//INITIAL CONFIG////////////////////////////////////////////////////////////////////////////
 
 	//Set and display crono 
 	let cronoHours = 0;
@@ -17,11 +17,11 @@ $(function() { //$(document).ready() shortcut
 	setInterval(function() {
 	
 		let clock = new Date();
-    	let clockHours = clock.getHours();
-        let clockMinutes = clock.getMinutes();
-        let clockSeconds = clock.getSeconds();
+	    	let clockHours = clock.getHours();
+	        let clockMinutes = clock.getMinutes();
+	        let clockSeconds = clock.getSeconds();
 
-    	//Add double digits
+    		//Add double digits
 		if (clockHours < 10) {
 			clockHours = "0" + clockHours;
 		}
@@ -35,28 +35,36 @@ $(function() { //$(document).ready() shortcut
 		}
 
 		//Print clock on the screem
-    	$("#options-clock_results").html(clockHours + ":" + clockMinutes + ":"  + clockSeconds);
+	    	$("#options-clock_results").html(clockHours + ":" + clockMinutes + ":"  + clockSeconds);
         
 	}, 1000);
 
 
-
-
 	//CRONO//////////////////////////////////////////////////////////////////////////////////////////
+	
+	/*To do: 
+	 * Icon toggle (Play to pause, pause to play) DONE
+	 * Reset button, fix values to 0
+	 * Don't start when the page is loaded
+	 * */
 
 
 	//Start crono
-	let crono = setInterval(startCrono,1000);
+	//let crono = setInterval(startCrono,1000);
 
 	$("#play-crono").click(function() {
 		crono_start = !crono_start; //Revert value of boolean
+		$("#play-crono").toggleClass("fa-pause fa-play");
+
 
 		if (crono_start === true) { //While working
-			console.log("crono working");
-			startCrono();
+			console.log(crono_start);
+			//startCrono();
 
-			} else {
-			console.log("crono not working");
+		} else {
+				
+			console.log(crono_start);
+			//pauseCrono();
 		}
 	});
 
@@ -66,14 +74,14 @@ $(function() { //$(document).ready() shortcut
 
 
 	//Restart crono
-	$("#restart-crono").click(restartCrono);
+	$("#restart-crono").click(startCrono);
 
 
 	//Crono functions////////////////
 	function startCrono() {
 		console.log("crono working");
 
-		cronoSeconds++;			
+			
 
 		if (cronoSeconds > 59) { //Add a minute each 60 seconds
 			cronoSeconds = 0;
@@ -110,6 +118,7 @@ $(function() { //$(document).ready() shortcut
 		} else {
 			$("#crono-hours").html(cronoHours);
 		}
+		cronoSeconds++;		
 	}
 
 	function stopCrono () {
