@@ -16,7 +16,14 @@ body {
         flex-direction: column;
         flex: 1;
         align-items: center;
-        height: 95vh;
+}
+
+#crono {
+	height: 90vh;
+}
+
+#options {
+	height: 100vh;
 }
 
 i {
@@ -78,7 +85,7 @@ i {
 #text-tasks {
 	width: 98%;
 	padding: 1%;
-	height: 75%;
+	height: 77%;
 	font-size: x-large;
 	border: 1.5px solid;
 	border-radius: 2px;

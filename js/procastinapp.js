@@ -43,98 +43,110 @@ $(function() { //$(document).ready() shortcut
 	//CRONO//////////////////////////////////////////////////////////////////////////////////////////
 	
 	/*To do: 
-	 * Icon toggle (Play to pause, pause to play) DONE
 	 * Reset button, fix values to 0
 	 * Don't start when the page is loaded
 	 * */
 
+        function chrono () {
 
-	//Start crono
-	//let crono = setInterval(startCrono,1000);
+                let end = new Date();
+                let dif = end - start;
+
+                dif = new Date(dif);
+		let cronoMSecs = dif.getMilliseconds();
+		let cronoSeconds = dif.getSeconds();
+		let cronoMinutes = dif.getMinutes();
+                let cronoHours = dif.getHours() - 1;
+
+		 //Print values and add double digits
+		if (cronoSeconds < 10) {
+			cronoSeconds = "0" + cronoSeconds;
+		}
+
+		if(cronoMinutes < 10) {
+			cronoMinutes = "0" + cronoMinutes;
+		}
+
+		if (cronoHours < 10) {
+			cronoHours = "0" + cronoHours;
+		}
+
+
+
+	}
+
 
 	$("#play-crono").click(function() {
-		crono_start = !crono_start; //Revert value of boolean
-		$("#play-crono").toggleClass("fa-pause fa-play");
 
+		//Reverse value and change icon
+		crono_start = !crono_start;
+		$("#play-crono").toggleClass("fa-pause fa-play");
 
 		if (crono_start === true) { //While working
 			console.log(crono_start);
-			//startCrono();
 
 		} else {
-				
 			console.log(crono_start);
-			//pauseCrono();
 		}
 	});
 
 
-	//Pause crono
-	$("#pause-crono").click(stopCrono);
-
-
 	//Restart crono
-	$("#restart-crono").click(startCrono);
+	//$("#restart-crono").click(restartCrono);
 
 
 	//Crono functions////////////////
-	function startCrono() {
-		console.log("crono working");
+	/*function startCrono() {
 
-			
+		setInterval(function () {
 
-		if (cronoSeconds > 59) { //Add a minute each 60 seconds
-			cronoSeconds = 0;
-			cronoMinutes++;
-		}
+			if (cronoSeconds > 59) { //Add a minute each 60 seconds
+				cronoSeconds = 0;
+				cronoMinutes++;
+			}
 
-		if (cronoMinutes > 59) { //Add an hour each 60 minutes
-			cronoMinutes = 0;
-			cronoHours++;
-		}
+			if (cronoMinutes > 59) { //Add an hour each 60 minutes
+				cronoMinutes = 0;
+				cronoHours++;
+			}
 
-		if(cronoHours > 24) { //Add a max of 24 hours to reset values
-			cronoSeconds = 0;
-			cronoMinutes = 0;
-			cronoHours = 0;
-		}
+			if(cronoHours > 24) { //Add a max of 24 hours to reset values
+				cronoSeconds = 0;
+				cronoMinutes = 0;
+				cronoHours = 0;
+			}
 
 
-		//Print values and add double digits
-		if (cronoSeconds < 10) {
-			$("#crono-seconds").html("0" + cronoSeconds);
-		} else {
-			$("#crono-seconds").html(cronoSeconds);
-		}
+			//Print values and add double digits
+			if (cronoSeconds < 10) {
+				$("#crono-seconds").html("0" + cronoSeconds);
+			} else {
+				$("#crono-seconds").html(cronoSeconds);
+			}
 
-		if(cronoMinutes < 10) {
-			$("#crono-minutes").html("0" + cronoMinutes);	
-		} else {
-			$("#crono-minutes").html(cronoMinutes);
-		}	
+			if(cronoMinutes < 10) {
+				$("#crono-minutes").html("0" + cronoMinutes);	
+			} else {
+				$("#crono-minutes").html(cronoMinutes);
+			}	
 
-		if (cronoHours < 10) {
-			$("#crono-hours").html("0" + cronoHours);
-		} else {
-			$("#crono-hours").html(cronoHours);
-		}
-		cronoSeconds++;		
-	}
-
-	function stopCrono () {
-		console.log("pause button");
-		clearInterval(crono);
+			if (cronoHours < 10) {
+				$("#crono-hours").html("0" + cronoHours);
+			} else {
+				$("#crono-hours").html(cronoHours);
+			}
+			cronoSeconds++;		
+		}, 1000);
 	}
 
 
 	function restartCrono () {
-		console.log("crono restarted");
-		cronoHours = 0;
-		cronoMinutes = 0;
-		cronoSeconds = 0;
-	}
+		crono_start = false;
+		$("#crono-hours").html("0" + cronoHours);
+	        $("#crono-minutes").html("0" + cronoMinutes);
+	        $("#crono-seconds").html("0" + cronoSeconds);
 
-
+	}*/
 
 
 	
