@@ -2,7 +2,8 @@ $(function() { //$(document).ready() shortcut
 
 	//INITIAL CONFIG////////////////////////////////////////////////////////////////////////////
 
-	//Set and display crono 
+
+	//Set crono
 	let startTime = 0;
 	let start = 0;
 	let end = 0;
@@ -13,8 +14,9 @@ $(function() { //$(document).ready() shortcut
 	let cronoSeconds;
 	let cronoMinutes;
 	let cronoHours;
-	let crono_working = false;
 	let counter = 0;
+	let crono_working = false;
+
 
 	//Set clock
 	setInterval(function() {
@@ -38,7 +40,7 @@ $(function() { //$(document).ready() shortcut
 		}
 
 		//Print clock on the screen
-	    	$("#options-clock_results").html(clockHours + ":" + clockMinutes + ":"  + clockSeconds);
+	    	$("#options-clock_results").html(clockHours + " : " + clockMinutes + " : "  + clockSeconds);
         
 	}, 1000);
 
@@ -52,10 +54,9 @@ $(function() { //$(document).ready() shortcut
 
                 end = new Date();
                 dif = end - start;
-
                 dif = new Date(dif);
 
-		//cronoMSecs = dif.getMilliseconds();
+		cronoMSecs = dif.getMilliseconds();
 		cronoSeconds = dif.getSeconds();
 		cronoMinutes = dif.getMinutes();
                 cronoHours = dif.getHours() - 1;
@@ -73,28 +74,30 @@ $(function() { //$(document).ready() shortcut
 			cronoHours = "0" + cronoHours;
 		}
 
-		/* Optional Milliseconds
+		// Optional Milliseconds
 		if (cronoMSecs < 10){
 			cronoMSecs = "00" + cronoMSecs;
 		}
 
 		if (cronoMSecs < 100) {
 			cronoMSecs = "0" + cronoMSecs;
-		}*/
+		}
 
 		$("#crono-hours").html(cronoHours);
 		$("#crono-minutes").html(cronoMinutes);
 		$("#crono-seconds").html(cronoSeconds);
-		//$("#crono-milliseconds").html(cronoMSecs);
+		$("#crono-milliseconds").html(cronoMSecs);
 
-		timerID = setTimeout(crono, 1000);
+		timerID = setTimeout(crono, 10);
 	}
+
 
 	$("#play-crono").click(function() {
 		$("#play-crono").toggleClass("fa-pause fa-play");
 		crono_working = !crono_working;
 		console.log(crono_working);
 		counter++;
+		console.log(counter)
 
 		if (counter < 2) {
 			startCrono();
@@ -130,7 +133,15 @@ $(function() { //$(document).ready() shortcut
 		//}
 	}
 
-	function restartCrono () { start = new Date();}
+	function restartCrono () { 
+	/*	$("#crono-hours").html(cronoHours);
+                $("#crono-minutes").html(cronoMinutes);
+                $("#crono-seconds").html(cronoSeconds);
+                $("#crono-milliseconds").html(cronoMSecs);
+	*/
+		start = new Date();
+		counter = 0;
+	}
 	
 	function stopRestartCrono () { $(".fa-play").click(startCrono);}
 
@@ -150,14 +161,6 @@ $(function() { //$(document).ready() shortcut
 	$("#options-clock_icons").click(function() {
 		$("#options-clock_results").toggleClass("show");
 	});
-
-	//Show countdown///////////////////////////////////////////
-    	$("#options-countdown_icons").click(function() {
-        	$("#timer-countdown").toggleClass("show");
-        	$("#up-countdown").toggleClass("show");
-        	$("#down-countdown").toggleClass("show");
-        	$("#options-countdown_controller").toggleClass("show");
-    	});
 
 
 	//Contrast button//////////////////////////////////////////
