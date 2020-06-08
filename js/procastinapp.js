@@ -1,23 +1,79 @@
-$(function() { //$(document).ready() shortcut
+//$(function() { //$(document).ready() shortcut
 
 	//INITIAL CONFIG////////////////////////////////////////////////////////////////////////////
-	
+	var startTime = 0
+	var start = 0
+	var end = 0
+	var diff = 0
+	var timerID = 0
+	function chrono(){
+		end = new Date()
+		diff = end - start
+		diff = new Date(diff)
+		var msec = diff.getMilliseconds()
+		var sec = diff.getSeconds()
+		var min = diff.getMinutes()
+		var hr = diff.getHours()-1
+		if (min < 10){
+			min = "0" + min
+		}
+		if (sec < 10){
+			sec = "0" + sec
+		}
+		if(msec < 10){
+			msec = "00" +msec
+		}
+		else if(msec < 100){
+			msec = "0" +msec
+		}
+		document.getElementById("chronotime").innerHTML = hr + ":" + min + ":" + sec + ":" + msec
+		timerID = setTimeout("chrono()", 10)
+	}
+	function chronoStart(){
+		document.chronoForm.startstop.value = "stop!"
+		document.chronoForm.startstop.onclick = chronoStop
+		document.chronoForm.reset.onclick = chronoReset
+		start = new Date()
+		chrono()
+	}
+	function chronoContinue(){
+		document.chronoForm.startstop.value = "stop!"
+		document.chronoForm.startstop.onclick = chronoStop
+		document.chronoForm.reset.onclick = chronoReset
+		start = new Date()-diff
+		start = new Date(start)
+		chrono()
+	}
+	function chronoReset(){
+		document.getElementById("chronotime").innerHTML = "0:00:00:000"
+		start = new Date()
+	}
+	function chronoStopReset(){
+		document.getElementById("chronotime").innerHTML = "0:00:00:000"
+		document.chronoForm.startstop.onclick = chronoStart
+	}
+	function chronoStop(){
+		document.chronoForm.startstop.value = "start!"
+		document.chronoForm.startstop.onclick = chronoContinue
+		document.chronoForm.reset.onclick = chronoStopReset
+		clearTimeout(timerID)
+	}
+	/*
 	//Set crono
 	let startTime = 0;
 	let start = 0;
 	let end = 0;
-	let dif = 0;
+	let diff = 0;
 	let timerID = 0;
+
+
 
 	let cronoSeconds;
 	let cronoMinutes;
 	let cronoHours;
-	let counter = 0;
-	let crono_working = false;
-
 
 	//Set clock
-	setInterval(function() {
+/*	setInterval(function() {
 	
 		let clock = new Date();
 	    	let clockHours = clock.getHours();
@@ -44,6 +100,11 @@ $(function() { //$(document).ready() shortcut
 
 
 	//CRONO//////////////////////////////////////////////////////////////////////////////////////////
+	$(".fa-play").click(startCrono);
+	//$(".fa-pause").click(stopCrono);
+	$(".fa-history").click(restartCrono);
+
+	//Crono functions////////////////
 	function crono () {
 
                 end = new Date();
@@ -75,61 +136,42 @@ $(function() { //$(document).ready() shortcut
 	}
 
 
-	$("#play-crono").click(function() {
-		$("#play-crono").toggleClass("fa-pause fa-play");
-		crono_working = !crono_working;
-		console.log(crono_working);
-		counter++;
-		console.log(counter)
-
-		if (counter < 2) {
-			startCrono();
-		}
-	});
-
-
-	//Crono functions////////////////
 	function startCrono() {
-		if (crono_working === true) {
-			$(".fa-pause").click(stopCrono);
-		
-			$("#restart-crono").click(restartCrono);
-
-			start = new Date();
-
-			crono();
-		}
+		$("#play-crono").toggleClass("fa-pause fa-play");
+		$(".fa-pause").click(stopCrono);
+		$(".fa-history").click(restartCrono);
+		start = new Date();
+		crono();
 	}
 
 	function continueCrono() {
-			$(".fa-pause").click(stopCrono);
-			
-			$("#restart-crono").click(restartCrono);
-
-			start = new Date() - dif;
-
-			start = new Date(start);
-
-			crono();
-			//counter = 0;
+		$("#play-crono").toggleClass("fa-pause fa-play");
+		$(".fa-pause").click(stopCrono);
+		$(".fa-history").click(restartCrono);
+		start = new Date() - dif;
+		start = new Date(start);
+		crono();
 	}
 
 	function restartCrono () { 
-		$("#crono-hours").html(cronoHours);
-                $("#crono-minutes").html(cronoMinutes);
-                $("#crono-seconds").html(cronoSeconds);
-	
+		$("#crono-hours").html("0");
+                $("#crono-minutes").html("0");
+                $("#crono-seconds").html("0");
 		start = new Date();
-		counter = 0;
 	}
 	
-	function stopRestartCrono () { $(".fa-play").click(startCrono);}
+	function stopRestartCrono () { 
+		$("#crono-hours").html("0");
+		$("#crono-minutes").html("0");
+		$("#crono-seconds").html("0");
+		$("#play-crono").click(startCrono);
+	}
 
 
 	function stopCrono() {
+		$("#play-crono").toggleClass("fa-pause fa-play");
 		$(".fa-play").click(continueCrono);
-		$("#restart-crono").click(stopRestartCrono);
-
+		$(".fa-history").click(stopRestartCrono);
 		clearTimeout(timerID);
 	}
 
@@ -153,5 +195,7 @@ $(function() { //$(document).ready() shortcut
 	});
 	
 
-	
-});
+*/
+
+
+//});
