@@ -15,30 +15,21 @@
 		<!--jQuery & JavaScript-->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 		<script src="js/procastinapp.js" type="text/javascript"></script>
-
 	</head>
+
+
 	<body>
 
 		<div id="container" class="lightTheme">
 
 			<!-- Crono -->
-			<div id="crono">
-
+			<div id="chrono">
 				<h1>Crono</h1>
+				<div id="chrono-results">00:00:00</div>
 
-				<div id="chronotime">0:00:00:00
-								</div>
-
-				<div id="crono-icons">
-					<form name="chronoForm">
-						<i class="fas fa-play fa-2x" id="play-crono">
-							<input type="button" name="startstop" value="start!" onClick="chronoStart()" />
-						</i>
-
-						<i class="fas fa-history fa-2x" id="restart-crono">
-							<input type="button" name="reset" value="reset!" onClick="chronoReset()" />
-						</i>
-					</form>
+				<div id="chrono-icons">
+						<i class="fas fa-play fa-2x" id="play-chrono" onClick="chronoStart()"></i>
+						<i class="fas fa-history fa-2x" id="restart-chrono" onClick="chronoReset()"></i>
 				</div>
 			</div>
 
@@ -52,35 +43,32 @@
 
 			<!-- Options -->
 			<div id="options">
-				
 
 				<!-- Options Clock -->
 				<div id="options-clock">
 					<div id="options-clock_results" class="hide"></div>
-					<div id="options-clock_icons">
+					<div id="options-clock_icons" onClick="showClock()">
 						<i class="fas fa-clock fa-2x" id="icon-clock"></i>
 					</div>
 				</div>
 
-
 				<!-- Options Music -->
 				<div id="options-music">
 					<div id="options-music_results" class="hide">
-						<i class="fas fa-play fa-2x" id="play-music"></i>
-						<i class="fas fa-pause fa-2x" id="pause-music"></i>
-						<i class="fas fa-random fa-2x" id="stop-music"></i>
+						<i class="fas fa-play fa-1x" id="play-music"></i>
+						<i class="fas fa-pause fa-1x" id="pause-music"></i>
+						<i class="fas fa-random fa-1x" id="stop-music"></i>
 					</div>
-					<div id="options-music_icons">
+					<div id="options-music_icons" onClick="showMusic()">
 						<i class="fas fa-headphones fa-2x" id="icon-music"></i>
 					</div>	
 				</div>
-
-				
+	
 				<!-- Options Contrast -->
 				<div id="options-contrast">
 					<div id="options-contrast_results" class="hide">Contrast</div>
 					<div id="options-contrast_icons">
-						<i class="fas fa-adjust fa-2x" id="icon-contrast"></i>
+						<i class="fas fa-adjust fa-2x" id="icon-contrast" onClick= "changeTheme()"></i>
 					</div>	
 				</div>
 			</div>

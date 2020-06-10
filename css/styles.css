@@ -11,11 +11,13 @@ body {
 	height: 100vh;
 }
 
-#crono, #tasks, #options {
+#chrono, #tasks, #options {
         display: flex;
         flex-direction: column;
-        flex: 1;
         align-items: center;
+}
+#chrono, #options {
+	flex: 1;
 }
 
 i {
@@ -41,27 +43,20 @@ i {
 
 /*	Crono		*/
 
-#crono {
+#chrono {
 	height: 85vh;
 	justify-content: space-between;
 }
 
-#crono-results {
+#chrono-results {
 	display: flex;
-	width: 54%;
+	width: 40%;
 	justify-content: flex-start;
-	align-items: center;
-	font-size: 3vh;
+	font-size: 5vh;
 }
 
-#crono-hours, #crono-minutes, #crono-seconds, #crono-milliseconds {
-	font-size: 7vh;
-	padding-left: 4%;
-	padding-right: 4%;
-}
-
-#crono-icons {
-	width: 100%;
+#chrono-icons {
+	width: 75%;
 	display: flex;
 	justify-content: space-around;
 }
@@ -72,15 +67,17 @@ i {
 /*	Tasks		*/
 
 #tasks {
+	flex: 3;
 	justify-content: start;
 }
 
 #text-tasks {
+	font-family: 'Ubuntu Mono', monospace;
 	width: 98%;
 	padding: 1%;
 	height: 77%;
 	font-size: x-large;
-	border: 1.5px solid;
+	border: 2px solid;
 	border-radius: 2px;
 }
 
@@ -110,12 +107,11 @@ i {
 	display: flex;
 	justify-content: flex-start;
 	flex: 1;
-	font-size: 5vh;
-	font-weight: bolder;
+	font-size: 4vh;
 	padding-left: 25%;
 }
 
-#options-clock_results, #crono-results {
+#options-clock_results, #chrono-results {
 	font-family: 'Digital-7', arial;
 }
 
