@@ -122,6 +122,20 @@ function showMusic() {
 	musicIcons.classList.toggle("show");
 }
 
+let play_button = document.getElementById("play-music");
+
+var glacierlagoon = new Howl({ 
+	src: ['media/glacierlagoon.opus']
+});
+
+play_button.onclick = playMusic;
+
+function playMusic() {
+	glacierlagoon.play();
+	console.log("playing music");
+}
+
+
 
 //CONTRAST/////////////////////////////////////////////////////////
 function changeTheme() {
