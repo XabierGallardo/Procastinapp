@@ -122,18 +122,45 @@ function showMusic() {
 	musicIcons.classList.toggle("show");
 }
 
-let play_button = document.getElementById("play-music");
+//Heavy Rain
+let heavyrain = new Howl({
+	src: ['media/heavyrain.opus']
+});
 
-var glacierlagoon = new Howl({ 
+document.getElementById("heavyrain").onclick = function() {
+	heavyrain.play();
+	console.log("Playing heavy rain");
+};
+
+//Glacier Lagoon
+let glacierlagoon = new Howl({
 	src: ['media/glacierlagoon.opus']
 });
 
-play_button.onclick = playMusic;
-
-function playMusic() {
+document.getElementById("glacierlagoon").onclick = function() {
 	glacierlagoon.play();
-	console.log("playing music");
-}
+	console.log("Playing glacier lagoon");
+};
+
+//Park Rain
+let parkrain = new Howl({
+	src: ['media/parkrain.opus']
+});
+
+document.getElementById("parkrain").onclick = function() {
+	parkrain.play();
+	console.log("Playing park rain");
+};
+
+//Waterfall
+let waterfall = new Howl({
+	src: ['media/waterfall.opus']
+});
+
+document.getElementById("waterfall").onclick = function() {
+	waterfall.play();
+	console.log("Playing waterfall");
+};
 
 
 
