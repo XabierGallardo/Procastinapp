@@ -1,5 +1,4 @@
 /*	General		*/
-
 body {
 	margin: 0 auto;
 	font-family: 'Ubuntu Mono', monospace;
@@ -41,8 +40,8 @@ i {
 
 
 
-/*	Crono		*/
 
+/*	Crono		*/
 #chrono {
 	height: 85vh;
 	justify-content: space-between;
@@ -64,8 +63,8 @@ i {
 
 
 
-/*	Tasks		*/
 
+/*	Tasks		*/
 #tasks {
 	flex: 3;
 	justify-content: start;
@@ -84,8 +83,8 @@ i {
 
 
 
-/*	Options		*/
 
+/*	Options		*/
 #options {
 	height: 100vh;
 	justify-content: space-around;
@@ -121,4 +120,38 @@ i {
 	flex: 1;
 	font-size: 1.5vh;
 	padding-left: 5%;
+}
+
+
+
+
+
+/*	Media Queries		*/
+@media (max-width: 780px) {
+	#container {
+		flex-direction: column;
+	}
+
+	#chrono, #tasks {
+		flex-direction: row;
+		flex: 1;
+		justify-content: space-around;
+	}
+
+	#chrono-icons {
+		width: 35%;
+	}
+
+	h1 {
+		display: none;
+	}
+
+	#chrono-results, #options-clock_results {
+		font-size: 6vh;
+	}
+
+	#text-tasks {
+		width: 90%;
+		height: 95%;
+	}
 }

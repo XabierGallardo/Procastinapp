@@ -1,7 +1,11 @@
 # Procastinapp
 A minimalist app to avoid procastination. No colors, no distractions, just a chronometer, a notepad and some other features to focus on our productivity.
 
-<img src="sample.PNG" alt="Sample Image">
+<img src="media/sample1.png" alt="Web Sample Image">
+
+<br>
+
+<img src="media/sample2.png" alt="Mobile Sample Image">
 
 #### Credits for background music
 - Heavy rain :cloud:

@@ -30,6 +30,9 @@ function showClock() {
 };
 
 
+
+
+
 //CHRONOMETER/////////////////////////////////////////////////////
 	let startTime = 0;
 	let start = 0;
@@ -115,52 +118,86 @@ function showClock() {
 	}
 
 
+
 	
+
 //MUSIC////////////////////////////////////////////////////////////
 function showMusic() {
 	let musicIcons = document.getElementById("options-music_results");
 	musicIcons.classList.toggle("show");
 }
 
+let music_on = false;
+
 //Heavy Rain
 let heavyrain = new Howl({
 	src: ['media/heavyrain.opus']
 });
 
-document.getElementById("heavyrain").onclick = function() {
-	heavyrain.play();
-	console.log("Playing heavy rain");
-};
+let btn_heavyrain = document.getElementById("heavyrain");
+
+btn_heavyrain.onclick = function (){
+	music_on = !music_on; //Toggle music functionality
+	if (music_on === true) {
+		heavyrain.play();
+		console.log("Playing heavy rain");
+	} else {
+		heavyrain.stop();
+		console.log("Stopped heavy rain");
+	}
+}
 
 //Glacier Lagoon
 let glacierlagoon = new Howl({
 	src: ['media/glacierlagoon.opus']
 });
 
-document.getElementById("glacierlagoon").onclick = function() {
-	glacierlagoon.play();
-	console.log("Playing glacier lagoon");
-};
+let btn_glacierlagoon = document.getElementById("glacierlagoon");
+
+btn_glacierlagoon.onclick = function() {
+	music_on = !music_on;
+	if (music_on === true) {
+		glacierlagoon.play();
+		console.log("Playing glacier lagoon");
+	} else {
+		glacierlagoon.stop();
+	}
+}
 
 //Park Rain
 let parkrain = new Howl({
 	src: ['media/parkrain.opus']
 });
 
-document.getElementById("parkrain").onclick = function() {
-	parkrain.play();
-	console.log("Playing park rain");
-};
+let btn_parkrain = document.getElementById("parkrain");
+
+btn_parkrain.onclick = function() {
+	music_on = !music_on;
+	if(music_on === true) {
+		parkrain.play();
+		console.log("Playing park rain");
+	} else {
+		parkrain.stop();
+	}
+}
 
 //Waterfall
 let waterfall = new Howl({
 	src: ['media/waterfall.opus']
 });
 
-document.getElementById("waterfall").onclick = function() {
-	waterfall.play();
-	console.log("Playing waterfall");
-};
+let btn_waterfall = document.getElementById("waterfall");
+btn_waterfall.onclick = function() {
+	music_on = !music_on;
+	if(music_on === true) {
+		waterfall.play();
+		console.log("Playing waterfall");
+	} else {
+		waterfall.stop();
+	}
+}
+
+
 
 
 
